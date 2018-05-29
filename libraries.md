@@ -6,20 +6,20 @@ nav: true
 ---
 
 This list contains user contributed client libraries for phant.  If you have a phant client library to add to this 
-list, please [submit an issue on GitHub](https://github.com/sparkfun/phant-docs/issues) with
+list, please [submit an issue on GitHub](https://github.com/Tugzrida/phant-docs/issues) with
 a link to your library.  If you can't find a client library in this list that fits your needs,
 there is also a growing list of example code
-[included in the phant repo](https://github.com/sparkfun/phant/tree/master/examples).
+[included in the phant repo](https://github.com/Tugzrida/phant/tree/master/examples).
 
 ### Arduino
 
-* [phant-arduino](https://github.com/sparkfun/phant-arduino) - Web client independent library for building
+* [phant-arduino](https://github.com/Tugzrida/phant-arduino) - Web client independent library for building
 Phant compatible HTTP requests.
 * [SparkFunDataClient](https://github.com/Serasidis/SparkfunDataClient) - Arduino example sketch that works on both W5100 ethernet module (stock ethernet library) and ENC28J60 ethernet module by using the UIPEthernet library
 
 ### Bro
 
-* [brophant](https://github.com/sethhall/brophant) - More info about the Bro language: ([bro.org](http://bro.org))
+* [brophant](https://github.com/sethhall/brophant) - More info about the Bro language: ([bro.org](https://bro.org))
 
 ### C&#35;
 
@@ -57,5 +57,5 @@ Phant compatible HTTP requests.
 
 ### Spark Core
 
-* [PietteTech_Phant](http://github.com/piettetech/PietteTech_Phant)
+* [PietteTech_Phant](https://github.com/piettetech/PietteTech_Phant)
 * [phant](https://github.com/romainmp/phant)

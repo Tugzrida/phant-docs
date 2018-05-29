@@ -5,20 +5,20 @@ docs: Input
 order: 1
 ---
 
-Unfortunately we have to enforce rate limits on [data.sparkfun.com](https://data.sparkfun.com) in order to prevent service outages.
+Unfortunately we have to enforce rate limits on [phant.xyz](https://phant.xyz) in order to prevent service outages.
 Most users won't hit the rate limit during normal use, but it is something you should be aware of if your device needs to send a lot of logging requests in a short
 period of time.
 
 ## 15 Minute Windows
 
-Limits are divided into 15 minute intervals on [data.sparkfun.com](https://data.sparkfun.com).  You are currently
+Limits are divided into 15 minute intervals on [phant.xyz](https://phant.xyz).  You are currently
 limited to making 100 log requests every 15 minutes.  You can make those requests in bursts, or spread them out over the entire window.
 
 ## HTTP Headers and Response Codes
 
 The server will respond with HTTP rate limit headers for every logging request you make.  These HTTP headers are contextual,
 so they only indicate the rate limit for the current stream.  You will have separate rate limits for each stream you create on
-[data.sparkfun.com](https://data.sparkfun.com).
+[phant.xyz](https://phant.xyz).
 
 * `X-Rate-Limit-Limit` - The rate limit ceiling for that given request
 * `X-Rate-Limit-Remaining` - The number of requests left for the 15 minute window
@@ -36,7 +36,7 @@ so they only indicate the rate limit for the current stream.  You will have sepa
 
     1 success
 
-When you exceed the rate limit for a given stream, [data.sparkfun.com](https://data.sparkfun.com)
+When you exceed the rate limit for a given stream, [phant.xyz](https://phant.xyz)
 will return a `HTTP 429 Too Many Requests` response code, along with an error message.
 
 **Example** Over the limit response:

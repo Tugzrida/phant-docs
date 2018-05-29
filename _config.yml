@@ -1,11 +1,11 @@
 # Site settings
-title: phant.io
-email: data@sparkfun.com
-github: sparkfun/phant
-twitter: phant_io
-description: "data collection for the internet of things. developed by sparkfun electronics."
+title: docs.phant.xyz
+email: tugzrida@phant.xyz
+github: Tugzrida/phant
+twitter: Tugzrida
+description: "data collection for the internet of things. developed by sparkfun electronics and tugzrida."
 baseurl: ""
-url: "http://phant.io"
+url: "https://docs.phant.xyz"
 
 # Build settings
 markdown: kramdown

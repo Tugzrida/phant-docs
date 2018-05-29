@@ -6,9 +6,9 @@ categories: graphing google
 ---
 
 There are plenty of services and JavaScript libraries that will allow you to graph your logged data. So
-instead of trying to reinvent one of those services on [data.sparkfun.com](https://data.sparkfun.com), 
+instead of trying to reinvent one of those services on [phant.xyz](https://phant.xyz), 
 we'll show you how to connect existing services and libraries to your data streams.
-In this tutorial, we will help you graph live data from [data.sparkfun.com](https://data.sparkfun.com)
+In this tutorial, we will help you graph live data from [phant.xyz](https://phant.xyz)
 using the [Google Charts](https://developers.google.com/chart/) JavaScript library.
 
 **Table of Contents**
@@ -17,11 +17,11 @@ using the [Google Charts](https://developers.google.com/chart/) JavaScript libra
 {:toc}
 
 ## Getting Started
-This tutorial assumes you already have pushed data to a stream on [data.sparkfun.com](https://data.sparkfun.com),
+This tutorial assumes you already have pushed data to a stream on [phant.xyz](https://phant.xyz),
 and that you know the `public key` to your stream.  If you need help posting data to a stream, check out
 [the usage docs](/docs) for more info.
 
-We are going to use [this weather station stream](https://data.sparkfun.com/streams/dZ4EVmE8yGCRGx5XRX1W) in this
+We are going to use [this weather station stream](https://phant.xyz/streams/dZ4EVmE8yGCRGx5XRX1W) in this
 tutorial, but you can replace the fields and public key with the appropriate info from your stream.
 
 ## Example Chart
@@ -39,7 +39,7 @@ JSON to load.
 function drawChart() {
 
   var jsonData = $.ajax({
-    url: 'https://data.sparkfun.com/output/dZ4EVmE8yGCRGx5XRX1W.json',
+    url: 'https://phant.xyz/output/dZ4EVmE8yGCRGx5XRX1W.json',
     data: {page: 1},
     dataType: 'jsonp',
   }).done(function (results) {
@@ -99,9 +99,9 @@ google.setOnLoadCallback(drawChart);
 {% endhighlight %}
 
 ## Loading Data via JSONP
-We will be using [jQuery](http://jquery.com/) in this example to load data via a [JSONP](http://en.wikipedia.org/wiki/JSONP)
-request.  JSONP allows you to request data from [data.sparkfun.com](https://data.sparkfun.com) without violating the
-[same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy). Below is an example of how you can make a JSONP
+We will be using [jQuery](https://jquery.com/) in this example to load data via a [JSONP](https://en.wikipedia.org/wiki/JSONP)
+request.  JSONP allows you to request data from [phant.xyz](https://phant.xyz) without violating the
+[same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). Below is an example of how you can make a JSONP
 request for your stream's data.  We will be using this approach to fill in chart data.
 
 **Example** Make a JSONP request for the first page of data
@@ -110,7 +110,7 @@ request for your stream's data.  We will be using this approach to fill in chart
 var public_key = 'dZ4EVmE8yGCRGx5XRX1W';
 
 $.ajax({
-  url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+  url: 'https://phant.xyz/output/' + public_key + '.json',
   data: {page: 1},
   dataType: 'jsonp',
 }).done(function (results) {
@@ -189,7 +189,7 @@ chart.draw(data, {
 
         // JSONP request
         var jsonData = $.ajax({
-          url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+          url: 'https://phant.xyz/output/' + public_key + '.json',
           data: {page: 1},
           dataType: 'jsonp',
         }).done(function (results) {
@@ -236,5 +236,5 @@ chart.draw(data, {
 {% endhighlight%}
 
 ## Final Thoughts
-You can read more about how to interact with phant by visiting [phant.io/docs](/docs). If you spot any errors, or have any issues,
+You can read more about how to interact with phant by visiting [docs.phant.xyz/docs](/docs). If you spot any errors, or have any issues,
 let us know in the comment section below.

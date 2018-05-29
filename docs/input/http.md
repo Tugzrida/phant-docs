@@ -18,28 +18,28 @@ You can make either a `HTTP GET` or `HTTP POST` request to log data, but when po
 We will be using `temp` and `humidity` as the field names in the following examples, but you should replace them
 with the names of the fields you entered when creating your data stream. Replace `PUBLIC_KEY` and `DELETE_KEY`
 with the keys provided to you when you created the stream.  You should make sure that you
-[URL encode](http://en.wikipedia.org/wiki/Percent-encoding) your data before sending it.  When your data is logged,
+[URL encode](https://en.wikipedia.org/wiki/Percent-encoding) your data before sending it.  When your data is logged,
 a `timestamp` field is automatically added to each row with the current server time in
-[ISO-8601 extended format](http://en.wikipedia.org/wiki/ISO_8601).
+[ISO-8601 extended format](https://en.wikipedia.org/wiki/ISO_8601).
 
 <div class="url">
   <span class="method GET">GET</span>
-  http://data.sparkfun.com/input/PUBLIC_KEY?private_key=PRIVATE_KEY&FIELD1=VALUE1&=FIELD2=VALUE2
+  https://phant.xyz/input/PUBLIC_KEY?private_key=PRIVATE_KEY&FIELD1=VALUE1&=FIELD2=VALUE2
 </div>
 
 {% highlight bash %}
-curl -X GET 'http://data.sparkfun.com/input/PUBLIC_KEY?private_key=PRIVATE_KEY&temp=91.4&humidity=86%25'
+curl -X GET 'https://phant.xyz/input/PUBLIC_KEY?private_key=PRIVATE_KEY&temp=91.4&humidity=86%25'
 {% endhighlight %}
 
 When making a `HTTP POST` request, you should send your `PRIVATE_KEY` using the `Phant-Private-Key` request header.
 
 <div class="url">
   <span class="method POST">POST</span>
-  http://data.sparkfun.com/input/PUBLIC_KEY
+  https://phant.xyz/input/PUBLIC_KEY
 </div>
 
 {% highlight bash %}
-curl -X POST 'http://data.sparkfun.com/input/PUBLIC_KEY' \
+curl -X POST 'https://phant.xyz/input/PUBLIC_KEY' \
   -H 'Phant-Private-Key: PRIVATE_KEY' \
   -d 'temp=91.4&humidity=86%25'
 {% endhighlight %}
@@ -80,13 +80,13 @@ would look like this:
 
 ### JSON Response Examples
 
-If you are using a client that can parse [JSON](http://en.wikipedia.org/wiki/JSON), you can make a
+If you are using a client that can parse [JSON](https://en.wikipedia.org/wiki/JSON), you can make a
 request that asks for the response to be returned in JSON format.  The simplest way to accomplish this
 is to append `.json` to the public key in the URL.
 
 <div class="url">
   <span class="method POST">POST</span>
-  http://data.sparkfun.com/input/PUBLIC_KEY.json
+  https://phant.xyz/input/PUBLIC_KEY.json
 </div>
 
 **Example** JSON response body from a successful post:
@@ -117,19 +117,19 @@ HTTP/1.1 400 Bad Request
 ### JSONP Response Examples
 
 If you are using JavaScript in a web browser to log data, then you might be interested in using the
-[JSONP](http://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
+[JSONP](https://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
 from a different domain, which is normally not possible because of the
-[same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy).
+[same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy).
 
 Unlike all of the other methods, JSONP responses will always be sent with the `HTTP 200` success code.  We respond
 this way for the JSONP format because browsers will not parse the response body when the server replies with a HTTP error code.
 
-**Example** [jQuery](http://jquery.com) JSONP logging request
+**Example** [jQuery](https://jquery.com) JSONP logging request
 
 {% highlight js %}
 var public_key = 'YOUR_PUBLIC_KEY';
  $.ajax({
-   url: 'http://data.sparkfun.com/input/' + public_key + '.json',
+   url: 'https://phant.xyz/input/' + public_key + '.json',
    jsonp: 'callback',
    cache: true,
    dataType: 'jsonp',

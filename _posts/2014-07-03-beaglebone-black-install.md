@@ -37,9 +37,9 @@ to provide it with power and connect it to your router with a ethernet cable.
 ## Connecting via SSH
 
 Once you have the power and ethernet cables connected, you can connect to your BeagleBone from a
-computer on the same network via [SSH](http://en.wikipedia.org/wiki/Secure_Shell).  If you are using
+computer on the same network via [SSH](https://en.wikipedia.org/wiki/Secure_Shell).  If you are using
 Mac OSX or a Linux Distro, then you should already have a SSH client installed.  If you are running
-Windows, then your best bet is to install the [PuTTY](http://www.putty.org/) SSH client.
+Windows, then your best bet is to install the [PuTTY](https://www.putty.org/) SSH client.
 
 To connect to your BeagleBone, you need to run `ssh root@beaglebone.local` from a terminal.
 
@@ -53,7 +53,7 @@ $ ssh root@beaglebone.local
  
  BeagleBoard.org BeagleBone Debian Image 2014-04-23
  
- Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+ Support/FAQ: https://elinux.org/Beagleboard:BeagleBoneBlack_Debian
  Last login: Thu Jul  3 14:34:16 2014 from todd.local
  root@beaglebone:~#
 {% endhighlight %}
@@ -64,7 +64,7 @@ If you see the prompt `root@beaglebone:~#`, then you have connected successfully
 
 The [Beaglebone Black Rev C](https://www.sparkfun.com/products/12857) comes with the [Debian Wheezy](https://wiki.debian.org/DebianWheezy)
 Linux distribution pre-installed.  By default, there is an instance of the
-[Apache HTTP Server](http://en.wikipedia.org/wiki/Apache_HTTP_Server) running on the ports phant uses, so we need
+[Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server) running on the ports phant uses, so we need
 to stop Apache.
 
 You can stop Apache by running `service apache2 stop` from the SSH prompt.
@@ -74,7 +74,7 @@ root@beaglebone:~# service apache2 stop
 {% endhighlight %}
 
 ## Installing Phant
-Phant is a [node.js](http://nodejs.org/) application that is distributed via [npm](https://www.npmjs.org/). Luckily,
+Phant is a [node.js](https://nodejs.org/) application that is distributed via [npm](https://www.npmjs.org/). Luckily,
 both node.js and npm are part of the default BeagleBone Black install, so we can use `npm` to install the required packages.
 
 Install the `phant` package via npm.
@@ -99,12 +99,12 @@ You can now browse to [http://beaglebone.local:8080/](http://beaglebone.local:80
 *phant is ready and listening for input.* in your web browser.
 
 ## Creating a Test Stream
-By default, the web stream management user interface (like the one [data.sparkfun.com](https://data.sparkfun.com) uses)
+By default, the web stream management user interface (like the one [phant.xyz](https://phant.xyz) uses)
 is disabled.  It is not included by default because it can become a resource hog on boards like the BeagleBone Black.
 
-Instead, data stream management can all be done via a [telnet](http://en.wikipedia.org/wiki/Telnet) client. If you are using
+Instead, data stream management can all be done via a [telnet](https://en.wikipedia.org/wiki/Telnet) client. If you are using
 Mac OSX or a Linux Distro, then you should already have a telnet client installed.  If you are running
-Windows, then you can use [PuTTY](http://www.putty.org/) as your telnet client.  You can connect to your phant
+Windows, then you can use [PuTTY](https://www.putty.org/) as your telnet client.  You can connect to your phant
 server over telnet by running `telnet beaglebone.local 8081`.
 
 {% highlight text %}
@@ -142,7 +142,7 @@ phant> create
  PRIVATE KEY:  PW4OPY5B6Ztjd5wD6zOXuY4BD2L
  DELETE KEY:  lAEwmPboWZuBqa10LQ9wcyz9qn8
  
- If you need help getting started, visit http://phant.io/docs.
+ If you need help getting started, visit https://docs.phant.xyz/docs.
  phant> quit
  Connection closed by foreign host.
 {% endhighlight %}
@@ -162,7 +162,7 @@ If everything worked, you should see `1 success`. If something went wrong, you w
 
 ## Retrieving Data From Your Stream
 Once you have successfully logged data, you can make a HTTP request to retrieve it. Data is currently available
-in [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) and [JSON](http://en.wikipedia.org/wiki/JSON) formats.
+in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) and [JSON](https://en.wikipedia.org/wiki/JSON) formats.
 You can retrieve to your stream data by pasting the following URL into your web browser. Replace the `PUBLIC_KEY` with the key
 given to you during the stream creation process.
 
@@ -198,5 +198,5 @@ root@beaglebone:~# forever start /usr/local/bin/phant
 Phant will now continue running after disconnecting from the SSH session.
 
 ## Final Thoughts
-You can read more about how to interact with phant by visiting [phant.io/docs](/docs). If you spot any errors, or have any issues,
+You can read more about how to interact with phant by visiting [docs.phant.xyz/docs](/docs). If you spot any errors, or have any issues,
 let us know in the comment section below.

@@ -16,7 +16,7 @@ The data returned will include:
 
 ## Data Formats
 Stats are currently available in `CSV`, `JSON`, and `JSONP` formats, but more formats will be available soon.  If you
-would like to see a specific stats output format supported, [submit an issue on GitHub](https://github.com/sparkfun/phant/issues),
+would like to see a specific stats output format supported, [submit an issue on GitHub](https://github.com/Tugzrida/phant/issues),
 and we will try to make it available.
 
 ## HTTP Request Examples
@@ -25,13 +25,13 @@ returned by the server.
 
 <div class="url">
   <span class="method GET">GET</span>
-  http://data.sparkfun.com/output/PUBLIC_KEY/stats.FORMAT
+  https://phant.xyz/output/PUBLIC_KEY/stats.FORMAT
 </div>
 
 **Example** Retrieve the stats for a stream in JSON format:
 
 {% highlight bash %}
-curl -X GET 'http://data.sparkfun.com/output/PUBLIC_KEY/stats.json'
+curl -X GET 'https://phant.xyz/output/PUBLIC_KEY/stats.json'
 {% endhighlight %}
 
 The JSON response would look like this:
@@ -46,19 +46,19 @@ The JSON response would look like this:
 
 ### JSONP Output
 If you are using JavaScript in a web browser to retrieve stats, then you might be interested in using the
-[JSONP](http://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
+[JSONP](https://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
 from a different domain, which is normally not possible because of the
-[same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy).
+[same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy).
 
 Unlike all of the other methods, JSONP responses will always be sent with the `HTTP 200` success code.  We respond
 this way for the JSONP format because browsers will not parse the response body when the server replies with a HTTP error code.
 
-**Example** Retrieve the stats for a stream in JSONP format with [jQuery](http://jquery.com):
+**Example** Retrieve the stats for a stream in JSONP format with [jQuery](https://jquery.com):
 
 {% highlight js %}
 var public_key = 'YOUR_PUBLIC_KEY';
  $.ajax({
-   url: 'http://data.sparkfun.com/output/' + public_key + '/stats.json',
+   url: 'https://phant.xyz/output/' + public_key + '/stats.json',
    jsonp: 'callback',
    cache: true,
    dataType: 'jsonp',
